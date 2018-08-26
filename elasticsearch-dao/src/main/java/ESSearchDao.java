@@ -1,2 +1,3 @@
-public class ESSearchDao {
+public interface ESSearchDao {
+
 }

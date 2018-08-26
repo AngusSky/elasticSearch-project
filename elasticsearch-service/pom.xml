@@ -9,12 +9,17 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>elasticsearch-dao</artifactId>
+    <artifactId>elasticsearch-service</artifactId>
 
     <dependencies>
+        <dependency>
+            <groupId>com.angus</groupId>
+            <artifactId>elasticsearch-dao</artifactId>
+        </dependency>
         <dependency>
             <groupId>com.angus</groupId>
             <artifactId>elasticsearch-common</artifactId>
         </dependency>
     </dependencies>
+
 </project>
