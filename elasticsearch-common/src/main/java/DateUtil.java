@@ -34,7 +34,6 @@ public class DateUtil {
 
                         @Override
                         protected SimpleDateFormat initialValue() {
-                            System.out.println("thread: " + Thread.currentThread() + " init pattern: " + pattern);
                             return new SimpleDateFormat(pattern);
                         }
                     };
