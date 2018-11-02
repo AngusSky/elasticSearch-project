@@ -10,6 +10,7 @@
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Service" />
     </context:component-scan>
 
+    <!--import 配置-->
     <import resource="classpath:application-service-es.xml" />
     <import resource="classpath:application-datasource.xml" />
 </beans>
