@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+    <!-- 配置文件 -->
+    <bean id="httpHost1" class="org.apache.http.HttpHost">
+        <constructor-arg value="${es.host1}" />
+        <constructor-arg value="${es.port1}" />
+        <constructor-arg value="${es.schema1}" />
+    </bean>
+
+    <bean id="httpHost2" class="org.apache.http.HttpHost">
+        <constructor-arg value="${es.host2}" />
+        <constructor-arg value="${es.port2}" />
+        <constructor-arg value="${es.schema2}" />
+    </bean>
+
+    <bean id="httpHost3" class="org.apache.http.HttpHost">
+        <constructor-arg value="${es.host3}" />
+        <constructor-arg value="${es.port3}" />
+        <constructor-arg value="${es.schema3}" />
+    </bean>
+
+    <bean id="httpHost4" class="org.apache.http.HttpHost">
+        <constructor-arg value="${es.host4}" />
+        <constructor-arg value="${es.port4}" />
+        <constructor-arg value="${es.schema4}" />
+    </bean>
+
+    <bean id="httpHost5" class="org.apache.http.HttpHost">
+        <constructor-arg value="${es.host5}" />
+        <constructor-arg value="${es.port5}" />
+        <constructor-arg value="${es.schema5}" />
+    </bean>
+
+    <bean id="httpHost6" class="org.apache.http.HttpHost">
+        <constructor-arg value="${es.host6}" />
+        <constructor-arg value="${es.port6}" />
+        <constructor-arg value="${es.schema6}" />
+    </bean>
+
+    <bean id="esClientFactory" class="com.angus.ESClientFactory" init-method="init">
+        <property name="httpHosts">
+            <list>
+                <ref bean="httpHost1" />
+                <ref bean="httpHost2" />
+                <ref bean="httpHost3" />
+                <ref bean="httpHost4" />
+                <ref bean="httpHost5" />
+                <ref bean="httpHost6" />
+            </list>
+        </property>
+    </bean>
+
+
+    <bean id="esTemplate" class="com.angus.ESTemplate" init-method="init" destroy-method="close">
+        <property name="esClientFactory" ref="esClientFactory" />
+    </bean>
+
+</beans>
