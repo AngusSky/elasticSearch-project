@@ -5,6 +5,11 @@
 
     <display-name>elasticsearch-angus</display-name>
 
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:appContext-bizlogsearcher.xml</param-value>
+    </context-param>
+
     <filter>
         <filter-name>InfoFilter</filter-name>
         <filter-class>com.info.web.filter.InfoFilter</filter-class>
